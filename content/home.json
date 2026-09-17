@@ -1,31 +1,43 @@
 {
   "site": {
-    "siteId": "00000000-0000-0000-0000-000000000000",
-    "companyName": "Exempel Elservice AB",
-    "organizationNumber": "556000-0000",
-    "displayName": "Exempel Elservice",
+    "siteId": "f23e8e7d-1e2b-4ced-b7f0-cd7257c1bd05",
+    "companyName": "Norrlands öl & läsk service ab",
+    "organizationNumber": "556905-3035",
+    "displayName": "Norrlands Öl och Läsk Service AB",
     "language": "sv",
-    "primaryColor": "#1254c5",
-    "secondaryColor": "#172033"
+    "primaryColor": "#1d4ed8",
+    "secondaryColor": "#0f172a",
+    "headingFont": "Georgia, \"Times New Roman\", serif",
+    "bodyFont": "Arial, sans-serif",
+    "headerBackgroundColor": "",
+    "mainBackgroundColor": "",
+    "footerBackgroundColor": "",
+    "schemaType": "LocalBusiness",
+    "theme": "classic",
+    "themeMode": "light"
   },
   "seo": {
-    "title": "Exempel Elservice i Stockholm | Elektriker för hem och företag",
-    "description": "Exempel Elservice hjälper privatpersoner och företag med elinstallationer, felsökning och laddboxar i Stockholm med omnejd.",
+    "title": "Norrlands Öl och Läsk Service AB | Service i Matfors med omnejd",
+    "description": "Lokal service och tekniskt underhåll i Matfors med omnejd. Service av dryckesanläggningar, ventilationsarbeten, plåtslageri och fastighetsservice.",
     "keywords": [
-      "elektriker stockholm",
-      "laddbox",
-      "elinstallation"
+      "dryckesanläggningar",
+      "ventilationsarbeten",
+      "plåtslageri",
+      "fastighetsservice",
+      "Matfors",
+      "lokal service"
     ]
   },
   "hero": {
-    "eyebrow": "Elektriker i Stockholm",
-    "headline": "Trygg hjälp med elinstallationer och service",
-    "subheadline": "Vi hjälper privatpersoner och företag med säkra, smidiga och professionella ellösningar i Stockholm.",
-    "primaryCtaLabel": "Begär offert",
+    "enabled": true,
+    "eyebrow": "Sedan 2012",
+    "headline": "Lokal service för dryckesanläggningar och tekniskt underhåll",
+    "subheadline": "Norrlands Öl och Läsk Service AB erbjuder service av läsk- och ölanläggningar, ventilationsarbeten, plåtslageri och fastighetsservice i Matfors med omnejd.",
+    "primaryCtaLabel": "Kontakta oss",
     "primaryCtaHref": "#contact",
     "buttons": [
       {
-        "label": "Begär offert",
+        "label": "Kontakta oss",
         "variant": "primary",
         "linkType": "section",
         "target": "contact"
@@ -33,31 +45,43 @@
     ]
   },
   "intro": {
-    "heading": "Din lokala expert",
-    "body": "Vi erbjuder snabb återkoppling, tydliga priser och väl utförda arbeten för både små och stora uppdrag."
+    "enabled": true,
+    "eyebrow": "Introduktion",
+    "heading": "Trygg service med lokal närvaro",
+    "body": "Vi hjälper företag och fastighetsägare med praktiska lösningar inom dryckesanläggningar, ventilation, plåtslageri och fastighetsservice. Med bred kompetens och lokal förankring får du en smidig partner för både service och underhåll."
   },
   "services": {
+    "enabled": true,
+    "eyebrow": "Tjänster",
     "heading": "Våra tjänster",
     "items": [
       {
-        "title": "Elinstallationer",
-        "description": "Installation av belysning, eluttag, centraler och fasta elarbeten.",
+        "title": "Service av dryckesanläggningar",
+        "description": "Felsökning, underhåll och service av läsk- och ölanläggningar för driftsäkra lösningar.",
         "image": {
           "url": "",
           "alt": ""
         }
       },
       {
-        "title": "Felsökning",
-        "description": "Snabb felsökning och åtgärd vid akuta eller återkommande elproblem.",
+        "title": "Ventilationsarbeten",
+        "description": "Arbeten inom ventilation med fokus på funktion, service och löpande underhåll.",
         "image": {
           "url": "",
           "alt": ""
         }
       },
       {
-        "title": "Laddboxar",
-        "description": "Installation och rådgivning kring laddboxar för villa och företag.",
+        "title": "Plåtslageri",
+        "description": "Praktiska plåtslagerilösningar anpassade efter fastighetens behov.",
+        "image": {
+          "url": "",
+          "alt": ""
+        }
+      },
+      {
+        "title": "Fastighetsservice",
+        "description": "Allmän fastighetsservice som underlättar vardagen och håller anläggningar i gott skick.",
         "image": {
           "url": "",
           "alt": ""
@@ -66,61 +90,120 @@
     ]
   },
   "about": {
-    "heading": "Om oss",
-    "body": "Exempel Elservice är ett erfaret företag som sätter säkerhet, tydlighet och god service i första rummet. Vårt mål är att göra det enkelt att få rätt hjälp direkt."
+    "enabled": true,
+    "eyebrow": "Om oss",
+    "heading": "Om Norrlands Öl och Läsk Service AB",
+    "body": "Aktiebolaget bedriver service på läsk- och ölanläggningar, ventilationsarbeten, plåtslageri och fastighetsservice. Verksamheten har varit igång sedan 2012 och präglas av yrkesskicklighet, flexibilitet och ett personligt bemötande."
   },
   "usp": {
+    "enabled": true,
+    "eyebrow": "Varför välja oss",
     "heading": "Därför väljer kunder oss",
     "items": [
-      "Snabb återkoppling",
-      "Certifierad kompetens",
-      "Tydliga priser"
+      "Lokal service",
+      "Brett tekniskt underhåll"
     ]
   },
   "testimonials": {
-    "heading": "Vad kunder säger",
+    "eyebrow": "Omdömen",
+    "heading": "Vad våra kunder uppskattar",
     "enabled": true,
     "items": [
       {
-        "name": "Anna",
-        "quote": "Snabb hjälp och väldigt proffsigt bemötande."
+        "name": "Kund i Matfors",
+        "quote": "Snabb och smidig hjälp när vi behövde service på vår anläggning."
       },
       {
-        "name": "Johan",
-        "quote": "Tydlig offert, bra kommunikation och snyggt utfört arbete."
+        "name": "Fastighetsägare",
+        "quote": "Brett kunnande och bra kommunikation genom hela uppdraget."
       }
     ]
   },
   "faq": {
+    "eyebrow": "FAQ",
     "heading": "Vanliga frågor",
     "enabled": true,
     "items": [
       {
         "question": "Vilka områden arbetar ni i?",
-        "answer": "Vi arbetar främst i Stockholm med omnejd."
+        "answer": "Vi arbetar i Matfors med omnejd och hjälper både företag och fastighetsägare i närområdet."
       },
       {
-        "question": "Kan jag få offert innan arbete påbörjas?",
-        "answer": "Ja, vi erbjuder tydliga offerter innan vi sätter igång."
+        "question": "Vilka typer av jobb tar ni?",
+        "answer": "Vi hjälper till med service av dryckesanläggningar, ventilationsarbeten, plåtslageri och fastighetsservice."
+      },
+      {
+        "question": "Hur kontaktar jag er?",
+        "answer": "Använd kontaktuppgifterna på sidan så återkommer vi så snart vi kan."
+      }
+    ]
+  },
+  "openingHours": {
+    "enabled": true,
+    "alwaysOpen": true,
+    "eyebrow": "Öppettider",
+    "heading": "Öppettider",
+    "body": "Kontakta oss för aktuell tillgänglighet och bokning av serviceuppdrag.",
+    "days": [
+      {
+        "day": "Måndag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Tisdag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Onsdag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Torsdag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Fredag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Lördag",
+        "opens": "",
+        "closes": "",
+        "closed": false
+      },
+      {
+        "day": "Söndag",
+        "opens": "",
+        "closes": "",
+        "closed": false
       }
     ]
   },
   "contact": {
+    "enabled": true,
+    "eyebrow": "Kontakt",
     "heading": "Kontakta oss",
-    "body": "Hör av dig så återkommer vi så snart vi kan.",
-    "phone": "0701234567",
-    "email": "kontakt@exempel.se",
-    "address": "Exempelgatan 1, 111 22 Stockholm"
+    "body": "Behöver du hjälp med service, underhåll eller tekniska arbeten i Matfors med omnejd? Hör av dig så ser vi över ditt behov.",
+    "email": "",
+    "phone": "070-375 54 52",
+    "address": "Matfors, Sverige"
   },
   "footer": {
-    "companyName": "Exempel Elservice AB",
-    "tagline": "Professionella elarbeten för privatpersoner och företag.",
-    "copyright": "© 2026 Exempel Elservice AB",
-    "socialLinks": {
-      "facebook": "",
-      "instagram": "",
-      "linkedin": ""
-    }
+    "enabled": true,
+    "companyName": "Norrlands Öl och Läsk Service AB",
+    "tagline": "Lokal service för dryckesanläggningar och tekniskt underhåll.",
+    "copyright": "© 2026 Norrlands Öl och Läsk Service AB",
+    "socialLinks": {}
   },
   "media": {
     "logoUrl": null,
@@ -130,12 +213,15 @@
     "imageRatio": "4 / 3",
     "heroImage": {
       "url": "",
-      "alt": ""
+      "alt": "Norrlands Öl och Läsk Service AB"
     },
     "aboutImage": {
       "url": "",
-      "alt": ""
+      "alt": "Norrlands Öl och Läsk Service AB"
     },
+    "galleryEnabled": true,
+    "galleryEyebrow": "Bilder",
+    "galleryHeading": "",
     "gallery": []
   },
   "security": {

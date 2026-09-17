@@ -139,8 +139,8 @@
     ]
   },
   "openingHours": {
-    "enabled": true,
-    "alwaysOpen": true,
+    "enabled": false,
+    "alwaysOpen": false,
     "eyebrow": "Öppettider",
     "heading": "Öppettider",
     "body": "Kontakta oss för aktuell tillgänglighet och bokning av serviceuppdrag.",

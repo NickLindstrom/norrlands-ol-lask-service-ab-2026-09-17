@@ -458,11 +458,14 @@ function setTitle(html, title) {
 }
 
 function getFaviconMimeType(value) {
-  const pathname = String(value || "").split(/[?#]/, 1)[0].toLowerCase();
+  const pathname = String(value || "")
+    .split(/[?#]/, 1)[0]
+    .toLowerCase();
 
   if (pathname.endsWith(".svg")) return "image/svg+xml";
   if (pathname.endsWith(".ico")) return "image/x-icon";
-  if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) return "image/jpeg";
+  if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg"))
+    return "image/jpeg";
   if (pathname.endsWith(".webp")) return "image/webp";
   return "image/png";
 }
@@ -470,7 +473,12 @@ function getFaviconMimeType(value) {
 function applyFavicon(html, content) {
   const href = content.media?.faviconUrl || "assets/sajt24-favicon.svg";
   html = setAttributeById(html, "site-favicon", "href", href);
-  return setAttributeById(html, "site-favicon", "type", getFaviconMimeType(href));
+  return setAttributeById(
+    html,
+    "site-favicon",
+    "type",
+    getFaviconMimeType(href),
+  );
 }
 
 function upsertHeadLink(html, rel, href) {
@@ -544,12 +552,16 @@ function getHeroButtons(content) {
   const buttons = Array.isArray(hero.buttons)
     ? hero.buttons
     : hasText(hero.primaryCtaLabel)
-      ? [{
-          label: hero.primaryCtaLabel,
-          variant: "primary",
-          linkType: String(hero.primaryCtaHref || "").startsWith("#") ? "section" : "external",
-          target: String(hero.primaryCtaHref || "#contact").replace(/^#/, ""),
-        }]
+      ? [
+          {
+            label: hero.primaryCtaLabel,
+            variant: "primary",
+            linkType: String(hero.primaryCtaHref || "").startsWith("#")
+              ? "section"
+              : "external",
+            target: String(hero.primaryCtaHref || "#contact").replace(/^#/, ""),
+          },
+        ]
       : [];
 
   return buttons.filter(
@@ -852,6 +864,24 @@ function renderOpeningHoursDays(days = []) {
     .join("");
 }
 
+function hasConfiguredOpeningHours(openingHours = {}) {
+  if (openingHours.alwaysOpen === true) {
+    return true;
+  }
+
+  const days = Array.isArray(openingHours.days) ? openingHours.days : [];
+
+  return days.some(
+    (item) => item && (hasText(item.opens) || hasText(item.closes)),
+  );
+}
+
+function isOpeningHoursVisible(openingHours = {}) {
+  return (
+    openingHours.enabled !== false && hasConfiguredOpeningHours(openingHours)
+  );
+}
+
 /* -------------------------------------------------------------------------- */
 /* SEO                                                                        */
 /* -------------------------------------------------------------------------- */
@@ -916,6 +946,8 @@ function buildJsonLd(content, pageUrl) {
 
   const openingHours = content.openingHours || {};
 
+  const openingHoursVisible = isOpeningHoursVisible(openingHours);
+
   const schemaDayNames = {
     Måndag: "Monday",
     Tisdag: "Tuesday",
@@ -958,8 +990,9 @@ function buildJsonLd(content, pageUrl) {
     ),
   );
 
-  const openingHoursSpecification =
-    openingHours.alwaysOpen === true
+  const openingHoursSpecification = !openingHoursVisible
+    ? []
+    : openingHours.alwaysOpen === true
       ? Object.values(schemaDayNames).map((dayOfWeek) => ({
           "@type": "OpeningHoursSpecification",
           dayOfWeek,
@@ -1033,7 +1066,9 @@ function buildJsonLd(content, pageUrl) {
       sameAs,
 
       openingHours:
-        openingHours.alwaysOpen === true ? "Mo-Su 00:00-23:59" : undefined,
+        openingHoursVisible && openingHours.alwaysOpen === true
+          ? "Mo-Su 00:00-23:59"
+          : undefined,
 
       openingHoursSpecification,
 
@@ -1232,7 +1267,12 @@ function renderPage(content) {
 
     if (firstHeroButton.linkType === "external") {
       html = setAttributeById(html, "nav-cta-link", "target", "_blank");
-      html = setAttributeById(html, "nav-cta-link", "rel", "noopener noreferrer");
+      html = setAttributeById(
+        html,
+        "nav-cta-link",
+        "rel",
+        "noopener noreferrer",
+      );
     }
   }
 
@@ -1415,13 +1455,27 @@ function renderPage(content) {
 
   html = setText(html, "contact-address", content.contact?.address || "");
 
-  html = setHiddenById(html, "contact", !contactVisible);
+  html = setHiddenById(
+    html,
+    "contact-phone-row",
+    !hasText(content.contact?.phone),
+  );
 
   html = setHiddenById(
     html,
-    "nav-cta-link",
-    heroButtons.length === 0,
+    "contact-email-row",
+    !hasText(content.contact?.email),
   );
+
+  html = setHiddenById(
+    html,
+    "contact-address-row",
+    !hasText(content.contact?.address),
+  );
+
+  html = setHiddenById(html, "contact", !contactVisible);
+
+  html = setHiddenById(html, "nav-cta-link", heroButtons.length === 0);
 
   /* Opening hours */
 
@@ -1436,9 +1490,7 @@ function renderPage(content) {
       ? '<div class="opening-hours-row"><span class="opening-hours-row__day">Öppettider</span><span class="opening-hours-row__time">Alltid öppet</span></div>'
       : renderOpeningHoursDays(openingHourDays);
 
-  const openingHoursVisible =
-    openingHours.enabled !== false &&
-    (openingHours.alwaysOpen === true || hasText(openingHoursHtml));
+  const openingHoursVisible = isOpeningHoursVisible(openingHours);
 
   html = setText(html, "opening-hours-eyebrow", openingHours.eyebrow || "");
 
